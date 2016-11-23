@@ -50,7 +50,9 @@ echo "$verifi"
 fi
 fi
 
-if [[ $e != "-" ]] || [[ $e != "+" ]] || [[ $e != "*" ]] || [[ $e != "/" ]] ; then
+if [[ $e == "-" ]] || [[ $e == "+" ]] || [[ $e == "*" ]] || [[ $e == "/" ]] ; then
+echo ""
+else 
 echo "commande vocale mathématique non reconnu"
 fi
 
