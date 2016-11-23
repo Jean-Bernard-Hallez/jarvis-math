@@ -1,5 +1,7 @@
 #!/bin/bash
 
+[[ -z $(which bc) ]] && sudo apt-get install bc
+
 chiffre() {
 #echo "$order"
 b=`echo "$order"| cut -d" " -f2`
@@ -20,6 +22,7 @@ c=$conv
 test $d
 
 
+
 if [[ $e == "+" ]] ; then
 echo "$b $d $c est égale à"
 echo "$b + $c" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"
@@ -38,7 +41,7 @@ fi
 if [[ $e == "/" ]] ; then
 echo "$b $d par $c est égale à"
 verifi=$(echo "$b / $c" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/")
-verifi1=$( echo `expr substr $verifi 1 1`)
+verifi1=$(echo `expr substr $verifi 1 1`)
 
 if [[ $verifi1 == "." ]] ; then 
 echo "0$verifi"
@@ -46,6 +49,11 @@ else
 echo "$verifi"
 fi
 fi
+
+if [[ $e != "-" ]] || [[ $e != "+" ]] || [[ $e != "*" ]] || [[ $e != "/" ]] ; then
+echo "commande vocale mathématique non reconnu"
+fi
+
 
 }
 
