@@ -2,8 +2,6 @@
 
 chiffre() {
 #echo "$order"
-#echo ${order##* }
-#echo ${order### }
 b=`echo "$order"| cut -d" " -f2`
 c=`echo "$order"| cut -d" " -f4`
 d=`echo $(jv_sanitize "$order")| cut -d" " -f3`
@@ -23,22 +21,22 @@ test $d
 
 
 if [[ $e == "+" ]] ; then
-echo "$b $d $c est égale à"
+echo "$b $d $c est Ã©gale Ã "
 echo "$b + $c" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"
 fi
 
 if [[ $e == "-" ]] ; then
-echo "$b $d $c est égale à"
+echo "$b $d $c est Ã©gale Ã "
 echo "$b - $c" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"
 fi
 
 if [[ $e == "*" ]] ; then
-echo "$b $d par $c est égale à "
+echo "$b $d par $c est Ã©gale Ã "
 echo "$b * $c" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"
 fi
 
 if [[ $e == "/" ]] ; then
-echo "$b $d par $c est égale à"
+echo "$b $d par $c est Ã©gale Ã "
 verifi=$(echo "$b / $c" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/")
 verifi1=$( echo `expr substr $verifi 1 1`)
 
@@ -128,7 +126,7 @@ fi
 
 if [[ $1 == "divise" ]] ; then
 e="/"
-d="divisé"
+d="divisÃ©"
 fi
 
 if [[ $conv == " " ]] ; then
