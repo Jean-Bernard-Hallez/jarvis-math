@@ -20,8 +20,8 @@ Jarvis: 2 * 4 est egale a 8
 You: Calcul 12 multiplié par deux
 Jarvis: 12 * 2 est egale a 24
 
-You: Calcul 12 divisé par deux
-Jarvis: 12 divise par 2 est egale a 6
+You: Calcul 5 divisé par deux
+Jarvis: 5 divise par 2 est egale a 2.50
 
 
 ```

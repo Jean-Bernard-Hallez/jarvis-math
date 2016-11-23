@@ -23,19 +23,25 @@ test $d
 
 
 if [[ $e == "+" ]] ; then
-echo "$b $d $c est égale à $(expr $b \+ $c)"
+echo "$b $d $c est égale à"
+echo "$b + $c" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"
 fi
 
 if [[ $e == "-" ]] ; then
-echo "$b $d $c est égale à $(expr $b \- $c)"
+echo "$b $d $c est égale à"
+echo "$b - $c" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"
+
 fi
 
 if [[ $e == "*" ]] ; then
-echo "$b $d par $c est égale à $(expr $b \* $c)"
+echo "$b $d par $c est égale à "
+echo "$b * $c" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"
+
 fi
 
 if [[ $e == "/" ]] ; then
-echo "$b $d $c est égale à $(expr $b / $c)"
+echo "$b $d par $c est égale à"
+echo "$b / $c" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"
 fi
 
 }
@@ -117,6 +123,7 @@ fi
 
 if [[ $1 == "divise" ]] ; then
 e="/"
+d="divisé"
 fi
 
 if [[ $conv == " " ]] ; then
