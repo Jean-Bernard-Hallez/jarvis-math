@@ -41,7 +41,6 @@ if [[ $e == "/" ]] ; then
 echo "$b $d par $c est égale à"
 verifi=$(echo "$b / $c" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/")
 verifi1=$( echo `expr substr $verifi 1 1`)
-echo $verifi1
 
 if [[ $verifi1 == "." ]] ; then 
 echo "0$verifi"
