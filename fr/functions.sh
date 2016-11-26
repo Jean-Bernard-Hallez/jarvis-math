@@ -2,6 +2,7 @@
 
 [[ -z $(which bc) ]] && sudo apt-get install bc
 
+
 chiffre() {
 #echo "$order"
 b=`echo "$order"| cut -d" " -f2`
