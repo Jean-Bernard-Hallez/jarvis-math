@@ -4,7 +4,6 @@
 
 
 chiffre() {
-#echo "$order"
 b=`echo "$order"| cut -d" " -f2`
 c=`echo "$order"| cut -d" " -f4`
 d=`echo $(jv_sanitize "$order")| cut -d" " -f3`
