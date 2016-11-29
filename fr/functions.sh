@@ -7,21 +7,26 @@ chiffre() {
 b=`echo "$order"| cut -d" " -f2`
 c=`echo "$order"| cut -d" " -f4`
 d=`echo $(jv_sanitize "$order")| cut -d" " -f3`
+e=" "
+
+test $d
+
+if [[ $test2 == "1" ]] ; then
+d=`echo $order | cut -d" " -f3`
+test $d
+fi
 
 if [[ $c == "par" ]] ; then
 c=`echo "$order"| cut -d" " -f5`
 fi
 
 
-e=" "
+echo "--> $d"
 
 test $b
 b=$conv
 test $c
 c=$conv
-test $d
-
-
 
 if [[ $e == "+" ]] ; then
 echo "$b $d $c est égale à"
@@ -118,6 +123,11 @@ if [[ $1 == "fois" ]] ; then
 e="*"
 fi
 
+if [[ $1 == "CHANGELOG.md" ]] ; then
+e="*"
+d="multipié"
+fi
+
 if [[ $1 == "x" ]] ; then
 e="*"
 d="multipié"
@@ -167,6 +177,11 @@ if [[ $conv == " " ]] ; then
 conv=$1
 fi
 
+if [[ $e == " " ]] ; then
+test2="1"
+else 
+test2="0"
+fi
 
 return
 }
