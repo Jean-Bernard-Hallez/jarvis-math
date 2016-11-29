@@ -1,9 +1,9 @@
 #!/bin/bash
 
+chiffre() {
+
 [[ -z $(which bc) ]] && sudo apt-get install bc
 
-
-chiffre() {
 b=`echo "$order"| cut -d" " -f2`
 c=`echo "$order"| cut -d" " -f4`
 d=`echo $(jv_sanitize "$order")| cut -d" " -f3`
@@ -62,6 +62,10 @@ fi
 test () {
 conv=" "
 
+if [[ $1 == "z�ro" ]] ; then
+conv=0
+fi
+
 if [[ $1 == "un" ]] ; then
 conv=1
 fi
@@ -114,12 +118,26 @@ if [[ $1 == "fois" ]] ; then
 e="*"
 fi
 
+if [[ $1 == "x" ]] ; then
+e="*"
+d="multipié"
+fi
+
+
 if [[ $1 == "additionne" ]] ; then
+e="+"
+fi
+
+if [[ $1 == "+" ]] ; then
 e="+"
 fi
 
 if [[ $1 == "plus" ]] ; then
 e="+"
+fi
+
+if [[ $1 == "-" ]] ; then
+e="-"
 fi
 
 if [[ $1 == "moins" ]] ; then
@@ -138,6 +156,12 @@ if [[ $1 == "divise" ]] ; then
 e="/"
 d="divisé"
 fi
+
+if [[ $1 == "/" ]] ; then
+e="/"
+d="divisé"
+fi
+
 
 if [[ $conv == " " ]] ; then
 conv=$1
