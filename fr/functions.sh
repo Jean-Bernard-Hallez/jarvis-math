@@ -21,8 +21,6 @@ c=`echo "$order"| cut -d" " -f5`
 fi
 
 
-echo "--> $d"
-
 test $b
 b=$conv
 test $c
