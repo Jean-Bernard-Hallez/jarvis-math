@@ -27,22 +27,22 @@ test $c
 c=$conv
 
 if [[ $e == "+" ]] ; then
-echo "$b $d $c est égale à"
+echo "$b $d $c est égale à "
 echo "$b + $c" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"
 fi
 
 if [[ $e == "-" ]] ; then
-echo "$b $d $c est égale à"
+echo "$b $d $c est égale à "
 echo "$b - $c" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"
 fi
 
 if [[ $e == "*" ]] ; then
-echo "$b $d par $c est égale à"
+echo "$b $d par $c est égale à "
 echo "$b * $c" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"
 fi
 
 if [[ $e == "/" ]] ; then
-echo "$b $d par $c est égale à"
+echo "$b $d par $c est égale à "
 verifi=$(echo "$b / $c" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/")
 verifi1=$(echo `expr substr $verifi 1 1`)
 
@@ -65,7 +65,7 @@ fi
 test () {
 conv=" "
 
-if [[ $1 == "z�ro" ]] ; then
+if [[ $1 == "zéro" ]] ; then
 conv=0
 fi
 

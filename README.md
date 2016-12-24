@@ -10,6 +10,7 @@ For multi-language plugin:
 - optionally write the Description / Usage sections in several languages
 -->
 ## Description
+(24/12/16 Unicode UFT8 ok)
 Permet de faire des calculs mathematiques sur les operations de base: additions, soustractions, multiplications et divisions.
 
 ## Usage
@@ -17,10 +18,10 @@ Permet de faire des calculs mathematiques sur les operations de base: additions,
 You: Calcul deux fois quatre
 Jarvis: 2 * 4 est egale a 8
 
-You: Calcul 12 multiplié par deux
+You: Calcul 12 multipliÃ© par deux
 Jarvis: 12 * 2 est egale a 24
 
-You: Calcul 5 divisé par deux
+You: Calcul 5 divisÃ© par deux
 Jarvis: 5 divise par 2 est egale a 2.50
 
 
@@ -28,3 +29,4 @@ Jarvis: 5 divise par 2 est egale a 2.50
 
 ## Author
 [Jean-Bernard Hallez](https://github.com/Jean-Bernard-Hallez/jarvis-plugin-math.git)
+
