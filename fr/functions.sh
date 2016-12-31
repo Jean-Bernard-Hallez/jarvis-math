@@ -27,36 +27,39 @@ test $c
 c=$conv
 
 if [[ $e == "+" ]] ; then
-echo "$b $d $c est égale à "
-echo "$b + $c" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"
+resultatmath="$b $d $c est égale à "
+resultatmath1=`echo "$b + $c" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"`
+say "$resultatmath $resultatmath1"
 fi
 
 if [[ $e == "-" ]] ; then
-echo "$b $d $c est égale à "
-echo "$b - $c" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"
+resultatmath="$b $d $c est égale à "
+resultatmath1=`echo "$b - $c" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"`
+say "$resultatmath $resultatmath1"
 fi
 
 if [[ $e == "*" ]] ; then
-echo "$b $d par $c est égale à "
-echo "$b * $c" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"
+resultatmath="$b $d par $c est égale à "
+resultatmath1=`echo "$b * $c" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"`
+say "$resultatmath $resultatmath1"
 fi
 
 if [[ $e == "/" ]] ; then
-echo "$b $d par $c est égale à "
+resultatmath="$b $d par $c est égale à "
 verifi=$(echo "$b / $c" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/")
 verifi1=$(echo `expr substr $verifi 1 1`)
 
 if [[ $verifi1 == "." ]] ; then 
-echo "0$verifi"
+say "$resultatmath 0$verifi"
 else
-echo "$verifi"
+say "$resultatmath $verifi"
 fi
 fi
 
 if [[ $e == "-" ]] || [[ $e == "+" ]] || [[ $e == "*" ]] || [[ $e == "/" ]] ; then
 echo ""
 else 
-echo "commande vocale mathématique non reconnu"
+say "commande vocale mathématique non reconnu"
 fi
 
 
