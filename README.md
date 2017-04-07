@@ -10,9 +10,14 @@ For multi-language plugin:
 - optionally write the Description / Usage sections in several languages
 -->
 ## Description
+(07/04/17 Un bug qui perturbait la fonction Test corrigé)
 (31/12/16 Correction de compatibilité avec Jarvis UI)
 (24/12/16 Unicode UFT8 ok)
 Permet de faire des calculs mathematiques sur les operations de base: additions, soustractions, multiplications et divisions.
+
+## Languages
+
+* Français
 
 ## Usage
 ```
