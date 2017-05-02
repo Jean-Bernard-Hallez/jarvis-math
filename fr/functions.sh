@@ -11,7 +11,6 @@ e=" "
 
 test_math $d
 
-
 if [[ $test2 == "1" ]] ; then
 d=`echo $order | cut -d" " -f3`
 test $d
