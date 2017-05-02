@@ -9,7 +9,8 @@ c=`echo "$order"| cut -d" " -f4`
 d=`echo $(jv_sanitize "$order")| cut -d" " -f3`
 e=" "
 
-test $d
+test_math $d
+
 
 if [[ $test2 == "1" ]] ; then
 d=`echo $order | cut -d" " -f3`
@@ -21,10 +22,14 @@ c=`echo "$order"| cut -d" " -f5`
 fi
 
 
-test $b
+test_math $b
 b=$conv
-test $c
+
+
+test_math $c
 c=$conv
+
+
 
 if [[ $e == "+" ]] ; then
 resultatmath="$b $d $c est égale à "
@@ -65,7 +70,7 @@ fi
 
 }
 
-test () {
+test_math () {
 conv=" "
 
 if [[ $1 == "zéro" ]] ; then
@@ -173,10 +178,10 @@ e="/"
 d="divisé"
 fi
 
-
 if [[ $conv == " " ]] ; then
 conv=$1
 fi
+
 
 if [[ $e == " " ]] ; then
 test2="1"

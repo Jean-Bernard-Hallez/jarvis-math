@@ -10,6 +10,7 @@ For multi-language plugin:
 - optionally write the Description / Usage sections in several languages
 -->
 ## Description
+(02/05/17 Correction suite modif du "plugins_installed")
 (07/04/17 Un bug qui perturbait la fonction Test corrigé)
 (31/12/16 Correction de compatibilité avec Jarvis UI)
 (24/12/16 Unicode UFT8 ok)
