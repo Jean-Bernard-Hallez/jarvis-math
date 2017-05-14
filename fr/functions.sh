@@ -21,14 +21,10 @@ c=`echo "$order"| cut -d" " -f5`
 fi
 
 
-test_math $b
+test $b
 b=$conv
-
-
 test_math $c
 c=$conv
-
-
 
 if [[ $e == "+" ]] ; then
 resultatmath="$b $d $c est égale à "
@@ -177,10 +173,10 @@ e="/"
 d="divisé"
 fi
 
+
 if [[ $conv == " " ]] ; then
 conv=$1
 fi
-
 
 if [[ $e == " " ]] ; then
 test2="1"

@@ -10,11 +10,12 @@ For multi-language plugin:
 - optionally write the Description / Usage sections in several languages
 -->
 ## Description
+(14/05/17 calcul avec des virgules)
 (02/05/17 Correction suite modif du "plugins_installed")
 (07/04/17 Un bug qui perturbait la fonction Test corrigé)
 (31/12/16 Correction de compatibilité avec Jarvis UI)
 (24/12/16 Unicode UFT8 ok)
-Permet de faire des calculs mathematiques sur les operations de base: additions, soustractions, multiplications et divisions.
+Permet de faire des calculs mathematiques sur les operations de base: additions, soustractions, multiplications et divisions avec ou sans virgule.
 
 ## Languages
 
@@ -31,6 +32,8 @@ Jarvis: 12 * 2 est egale a 24
 You: Calcul 5 divisé par deux
 Jarvis: 5 divise par 2 est egale a 2.50
 
+You calcul deux virgule 51 fois trois virgule neuf
+jarvis: 2,51 fois par 3,9 est égale à  9,78
 
 ```
 
