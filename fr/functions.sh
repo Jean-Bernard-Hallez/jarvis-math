@@ -112,7 +112,7 @@ if [[ $1 =~ "un" ]] ; then
 conv=1
 fi
 
-if [[ $1 =~ "deux" ]] ; then
+if [[ $1 =~ "de" ]] ; then
 conv=2
 fi
 
