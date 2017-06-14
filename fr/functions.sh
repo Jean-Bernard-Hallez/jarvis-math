@@ -5,7 +5,8 @@ chiffre() {
 
 b=`echo "$order" | sed -e "s/,/./g" | sed -e "s/ virgule /./g" | cut -d" " -f2`	# Premier chiffre
 c=`echo "$order" | sed -e "s/,/./g" | sed -e "s/ virgule /./g" | cut -d" " -f4`	# Deuxième chiffre
-d=`echo $(jv_sanitize "$order")`		# +-*/
+d=$order		# +-*/
+
 # e="$order"
 f=" "
 test_math "$d"
@@ -41,20 +42,22 @@ fi
 # Test si résultat b et c = numérique:
 test_val_mathb=`echo "$b" | sed -e "s/\.//g" |  sed -e "s/,//g" | egrep -o '[[:digit:]]*'`
 test_val_mathc=`echo "$c" | sed -e "s/\.//g" | sed -e "s/,//g" | egrep -o '[[:digit:]]*'`
-echo "test_val_mathb=$test_val_mathb et test_val_mathc=$test_val_mathc"
+# echo "test_val_mathb=$test_val_mathb et test_val_mathc=$test_val_mathc"
 if [ "$test_val_mathb" = "" ] || [ "$test_val_mathc" = "" ]; then
 say "Oups, je n'ai pas réussi à traduire les valeurs numériques désolé..."
 return
 fi
 
 if [ "$e" = "" ] ; then
+d=`echo $(jv_sanitize "$order")`		# +-*/
+test_math $d
 say "Oups, symbole utilisé non reconnu..."
 return
 fi
 
 # résultat calcul:
 if [[ $e =~ "+" ]] ; then
-resultatmath="$b $d $c est égale à"
+resultatmath="$b plus $c est égale à"
 resultatmath1=`echo "$b + $c" | sed -e "s/,/./g" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"`
 resultatmathok=`echo "$resultatmath $resultatmath1" | sed -e "s/\./,/g"`
 f="ok"
@@ -62,7 +65,7 @@ say "$resultatmathok"
 fi
 
 if [[ $e =~ "-" ]] ; then
-resultatmath="$b $d $c est égale à"
+resultatmath="$b moins $c est égale à"
 resultatmath1=`echo "$b - $c" | sed -e "s/,/./g" | bc -l | sed "s/\([0-9]*\.[0-9][0-9]\).*/\1/"`
 resultatmathok=`echo "$resultatmath $resultatmath1" | sed -e "s/\./,/g"`
 f="ok"
@@ -144,7 +147,7 @@ if [[ $1 =~ "neuf" ]] ; then
 conv=9
 fi
 
-if [[ $1 =~ "multiplie" ]] ; then
+if [[ $1 =~ "multipli" ]] ; then
 e="*"
 e1="multipié"
 fi
