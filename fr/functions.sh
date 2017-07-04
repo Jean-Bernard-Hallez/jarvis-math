@@ -19,12 +19,12 @@ if [[ "$b" =~ "." ]]; then
 b1=`echo "$b" | cut -d"." -f1`
 test_math $b1
 b1a=$conv
-
 b2=`echo "$b" | cut -d"." -f2`
 test_math $b2
 b="$b1a.$conv"
 else
 test_math $b
+b="$conv"
 fi
 
 
@@ -37,6 +37,7 @@ test_math $c2
 c="$c1a.$conv"
 else
 test_math $c
+c="$conv"
 fi
 
 # Test si résultat b et c = numérique:
@@ -208,6 +209,7 @@ fi
 
 if [[ $conv == " " ]] ; then
 conv=$1
+
 fi
 return
 }
